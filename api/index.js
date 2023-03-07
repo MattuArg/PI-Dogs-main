@@ -21,8 +21,11 @@ const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false, after: true }).then(() => {
   server.listen(3001, () => {
+    // alter: true => para que se actualize en postgress si hago cambios en la tabla/model
+    // force: false => sig. no borra la tabla con la info
+    // force: true => sig. borra la tabla
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
