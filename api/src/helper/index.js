@@ -2,6 +2,22 @@ const { default: axios } = require("axios")
 
 const { Dog, Temperaments } = require(".././db")
 
+let getAllTemperaments = async () => {
+    let allDogs = await getDogsApi()
+
+    let temperaments = allDogs.map(dog => dog.temperaments)
+
+    let temp = temperaments.join(", ").split(", ")
+
+    let temp_notRepeated = [...new Set(temp)]
+
+    temp_notRepeated.forEach(temp => {
+        Temperaments.findOrCreate({ where: { name: temp} })
+    })
+
+    return temp_notRepeated
+}
+
 let getDogsApi = async () => {
     let dogApi = await axios.get(`https://api.thedogapi.com/v1/breeds`/*?api_key=${API_KEY}*/)
 
@@ -10,10 +26,11 @@ let getDogsApi = async () => {
             id: dog.id,
             name: dog.name,
             image: dog.image.url,
-            // heigth: dog.height.metric,
+            heigth: dog.height.metric,
             weight: dog.weight.metric,
-            // life_span: dog.life_span
-            temperaments: dog.temperament
+            life_span: dog.life_span,
+            temperaments: dog.temperament,
+            origin: "API"
         }
     })
 
@@ -45,15 +62,12 @@ let getName = async (name) => {
     return allDogs.filter(dog => dog.name.toUpperCase().includes(name.toUpperCase()))
 }
 
-let getAllTemperaments = async () => {
-}
-
 let getDetail = async (id) => {
     let allDogs = await getDogs_Api_Db()
-    // let dogpru = await getDogsDb()
+    let dogpru = await getDogsDb()
 
-    // console.log(dogpru);
+    console.log(dogpru);
     return allDogs.filter(dog => dog.id == id)
 }
 
-module.exports = { getDogsApi, getDogs_Api_Db, getName, getAllTemperaments, getDetail }
+module.exports = { getAllTemperaments, getDogsApi, getDogs_Api_Db, getName, getDetail }

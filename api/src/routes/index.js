@@ -10,6 +10,6 @@ const mainRouter = Router();
 // Ejemplo: router.use('/auth', authRouter);
 
 mainRouter.use("/dogs", dogsRouter)
-// mainRouter.use("/temperaments", temperamentsRouter)
+mainRouter.use("/temperaments", temperamentsRouter)
 
 module.exports = mainRouter;

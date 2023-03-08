@@ -38,7 +38,12 @@ module.exports = (sequelize) => {
     life_span: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+
+    origin: {
+      type: DataTypes.STRING
     }
+    
   },{
     sequelize,
     modelName: "dog",

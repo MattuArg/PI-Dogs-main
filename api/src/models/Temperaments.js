@@ -2,7 +2,7 @@ const {Model, DataTypes} = require("sequelize")
 
 class Temperaments extends Model {}
 
-module.exports = sequelize => {
+module.exports = (sequelize) => {
     Temperaments.init({
         
         id: {

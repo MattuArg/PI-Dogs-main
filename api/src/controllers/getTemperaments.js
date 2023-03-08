@@ -1,14 +1,16 @@
-// let getTemperaments = (req,res) => {
+const { getAllTemperaments } = require("../helper/index")
 
-//     try {
-//         let getAllTemperaments = () => {
+let getTemperaments = async (req,res) => {
 
-//         }
+    try {
+        let allTemperaments = await getAllTemperaments()
+        
+        res.send(allTemperaments)
 
-//     } catch (error) {
-//         console.log(error);
-//         res.status(404).send(error.message)
-//     }
-// }
+    } catch (error) {
+        console.log(error);
+        res.status(404).send(error.message)
+    }
+}
 
-// module.exports = { getTemperaments }
+module.exports = { getTemperaments }
