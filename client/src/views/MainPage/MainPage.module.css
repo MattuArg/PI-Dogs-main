@@ -1,0 +1,35 @@
+.container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.718),rgba(0, 0, 0, 0.25)),
+    url("https://i.pinimg.com/564x/52/ff/16/52ff16cca541ae6aec51a671ab28ab55.jpg");
+    /* background-size: cover; */
+    height: 100vh;
+}
+
+.container h1 {
+    display: inline-flex;
+    margin: 0px;
+    color: #d1ffe4;
+    background-color: black;
+    border: #00ff42 solid 2px;
+    
+    width: fit-content;
+    padding: 12px;
+    border-radius: 22px;
+    
+    position: relative;
+    top: 33px;
+}
+
+.btn {
+    display: flex;
+    font-size: 33px;
+    border-radius: 23px;
+    padding: 7px 20px;
+    background-color: #43bf76;
+    border: #00ff42 solid 2px;
+    cursor: pointer;
+      
+    position: absolute;
+    top: 8.84em;
+    left: 622.475px;
+}
