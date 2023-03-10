@@ -11,11 +11,13 @@ let getAllTemperaments = async () => {
 
     let temp_notRepeated = [...new Set(temp)]
 
-    temp_notRepeated.forEach(temp => {
+    let result = temp_notRepeated.filter(temp => temp !== "")
+
+    result.forEach(temp => {
         Temperaments.findOrCreate({ where: { name: temp} })
     })
 
-    return temp_notRepeated
+    return result
 }
 
 let getDogsApi = async () => {
@@ -26,7 +28,7 @@ let getDogsApi = async () => {
             id: dog.id,
             name: dog.name,
             image: dog.image.url,
-            heigth: dog.height.metric,
+            height: dog.height.metric,
             weight: dog.weight.metric,
             life_span: dog.life_span,
             temperaments: dog.temperament,
@@ -64,9 +66,7 @@ let getName = async (name) => {
 
 let getDetail = async (id) => {
     let allDogs = await getDogs_Api_Db()
-    let dogpru = await getDogsDb()
 
-    console.log(dogpru);
     return allDogs.filter(dog => dog.id == id)
 }
 
