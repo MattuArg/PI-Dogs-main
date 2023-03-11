@@ -1,4 +1,4 @@
-import { GET_DOGS, GET_DOG_DETAILS, GET_DOG_NAME, ERROR } from "./actions"
+import { GET_DOGS, GET_DOG_DETAILS, GET_DOG_NAME, GET_TEMPERAMENTS, ERROR } from "./actions"
 
 const initialState = {
     dogs : [],
@@ -33,10 +33,15 @@ let rootReducer = (state = initialState, action) => {
             aux = state.dogs
             // aux = state.aux_dogs
         }
-
+        
         return {
             ...state,
             dogs: aux
+        }
+
+        case GET_TEMPERAMENTS: return {
+            ...state,
+            temperaments: action.payload
         }
 
         // case ERROR: return {
