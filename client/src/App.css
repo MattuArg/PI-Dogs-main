@@ -2,6 +2,20 @@
   text-align: center;
 }
 
+select {
+  outline: none;
+  width: 176px;
+  padding: 5px;
+
+  border: 2px solid rgba(250, 128, 114, 0.58);
+  border-radius: 5px; 
+}
+
+select:hover {
+  cursor: pointer;
+  border: 2px solid rgba(62, 68, 255, 0.714);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

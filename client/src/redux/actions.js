@@ -75,20 +75,23 @@ export let getDogName = (name) => {
     }
 }
 
-export let postDog = async (newDog) => {
-    
-    try {
-        let dogCreated = await axios.post("http://localhost:3001/dogs", newDog)
+export let postDog = (newDog) => {
+    return async () => {
 
-        return dogCreated
         
-    } catch (error) {
-        console.log(error);
-                 
-        // return dispatch({
-        //     type: ERROR,
-        //     payload: error
-        // })
+        try {
+            let dogCreated = await axios.post("http://localhost:3001/dogs", newDog)
+            
+            return dogCreated
+            
+        } catch (error) {
+            console.log(error);
+            
+            // return dispatch({
+                //     type: ERROR,
+                //     payload: error
+                // })
+        }
     }
 }
 

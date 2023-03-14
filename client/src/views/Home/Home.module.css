@@ -1,0 +1,8 @@
+.container {
+    background-image: 
+    url("https://i.pinimg.com/564x/44/7d/a1/447da14df021e9c13167c3de8cf7e18e.jpg");
+    background-size: cover;
+    min-height: 100vh;
+
+    background-attachment: fixed;
+}

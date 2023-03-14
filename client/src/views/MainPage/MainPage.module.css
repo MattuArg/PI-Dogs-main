@@ -1,7 +1,7 @@
 .container {
     background-image: linear-gradient(rgba(0, 0, 0, 0.718),rgba(0, 0, 0, 0.25)),
-    url("https://i.pinimg.com/564x/52/ff/16/52ff16cca541ae6aec51a671ab28ab55.jpg");
-    /* background-size: cover; */
+    url("https://i.pinimg.com/564x/33/ba/2d/33ba2d690c9631fcd9981d60021679a0.jpg");
+    background-size: cover;
     height: 100vh;
 }
 
