@@ -1,0 +1,43 @@
+.form {
+    display: inline-flex;
+    align-items: center;
+    margin: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: antiquewhite;
+}
+
+.input {
+    border: none;
+    padding: 8px;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.btn_submit {
+    display: flex;
+    border: #e49090ab 1.4px solid;
+    padding: 8px;
+    background: transparent;
+    color: #00c3ab;
+    border-radius: 99999px;
+    cursor: pointer;
+}
+
+.btn_submit:hover {
+    background-color: #f9e0bf;
+}
+  
+.icon_search {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 1px;
+}
+
+.icon_dog {
+    color: #00c3ab;
+    width: 24px;
+    height: 24px;
+}

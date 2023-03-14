@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getDogDetails } from "../../redux/actions";
+import { empty_Array, getDogDetails } from "../../redux/actions";
+import { Loading } from "../../components/Loading/Loading";
 
+import { Back } from "../../assets/Link/Back/Back";
 import s from "./Dog.module.css"
 
 export const DogDetails = (params) => {
@@ -13,39 +15,48 @@ export const DogDetails = (params) => {
 
     useEffect(() => {
         dispatch(getDogDetails(params.match.params.id))
+        dispatch(empty_Array("For_DogDetails"))
     },[])
 
     return(
-        <div>
+        <div className={s.container}>
+
+            <Back/>
+
             {
             dogDetails.length ?
-            <div className={s.details}>
-                <h2>id: </h2>
-                <h3>{dogDetails[0].id}</h3>
+            <div className={s.div_details}>
 
-                <h2>name: </h2>
+                <div className={s.id}>
+                    <h2>id:</h2>
+                    <h3>{dogDetails[0].id}</h3>
+                </div>
+
                 <h1>{dogDetails[0].name}</h1>
             
                 <img src={dogDetails[0].image} alt={dogDetails[0].image} />
 
-                <h2>height: </h2>
-                <p>{dogDetails[0].height}</p>
+                <div className={s.height_weight}>
+                    <h2>height: </h2>
+                    <h3>{dogDetails[0].height}</h3>
+  
+                    <h2>weigth: </h2>
+                    <h3>{dogDetails[0].weight}</h3>
+
+                    <h2>life span: </h2>
+                    <h3>{dogDetails[0].life_span}</h3>
+                </div>
             
-                <h2>weigth: </h2>
-                <p>{dogDetails[0].weight}</p>
-            
-                <h2>life span: </h2>
-                <p>{dogDetails[0].life_span}</p>
     
                 <h2>temperaments: </h2>
-                {
-                    Array.isArray(dogDetails[0].temperaments) ?
-                    dogDetails[0].temperaments.map((temp, i) => <p key={i}>{temp.name}</p>) : 
-                    <p>{dogDetails[0].temperaments}</p>  
-                }
+                <div className={s.temperaments}>
+                    {
+                        <h3>{dogDetails[0].temperaments}</h3>  
+                    }
+                </div>
             </div>
             :
-            <p>loading...</p>
+            <Loading/>
             }
         </div>
     )

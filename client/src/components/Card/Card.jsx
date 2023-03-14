@@ -17,10 +17,8 @@ export const Card = ({ id, image, name, temperaments, weight }) => {
             <div>
             temperaments:
                 {
-                typeof temperaments == "undefined"?
+                typeof temperaments == "undefined" ?
                 <h4>This dog has no temperaments</h4> :
-                Array.isArray(temperaments) ?
-                temperaments.map((temp, i) => <p key={i}>{temp.name}</p>) :
                 <h4>{temperaments}</h4>
                 }
             </div>

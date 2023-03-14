@@ -1,0 +1,15 @@
+.btn_refresh {
+    cursor: pointer;
+    margin: 30px 0px;
+    background-color: #00524b;
+    padding: 7px 12px;
+    border-radius: 11px;
+    border: 1.4px solid #ffd6c8;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+  
+.btn_refresh:hover {
+    background-color: #004640;
+}
+  

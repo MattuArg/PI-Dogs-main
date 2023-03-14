@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 
 import { BiSearchAlt } from "react-icons/bi"
 import { FaDog } from "react-icons/fa"
 
-import { getDogName } from "../../redux/actions";
+import { empty_Array, getDogName } from "../../redux/actions";
+
+import s from "./SearchBar.module.css"
 
 export const SearchBar = () => {
 
@@ -18,23 +20,26 @@ export const SearchBar = () => {
 
     let handleSubmit = (e) => {
         e.preventDefault()
+        dispatch(empty_Array("For_DogName"))
         dispatch(getDogName(searchDog))
         setSearchDog("")
     }
 
     return(
-        <form onSubmit={handleSubmit}>
-            <FaDog/>
-            <input
-                type="text"
-                value={searchDog}
-                onChange={handleChange}
-                placeholder="Search Dog..."
-            />
+        <div>
+            <form className={s.form} onSubmit={handleSubmit}>
+                <FaDog className={s.icon_dog}/>
+                <input className={s.input}
+                    type="text"
+                    value={searchDog}
+                    onChange={handleChange}
+                    placeholder="Search Dog..."
+                />
             
-            <button type="submit">
-                <BiSearchAlt/>
-            </button>
-        </form>
+                <button className={s.btn_submit} type="submit">
+                    <BiSearchAlt className={s.icon_search}/>
+                </button>
+            </form>
+        </div>
     )
 }

@@ -1,11 +1,16 @@
 import React from "react";
 import { Card } from "../Card/Card";
+
+import { Loading } from "../Loading/Loading";
+
+import { Error_404 } from "../Error/Error_404";
 import s from "./Cards.module.css"
 
-export const Cards = ({ dogs }) => {
+export const Cards = ({ dogs, errors }) => {
     return(
         <div className={s.cards}>
-            {dogs.length ? dogs.map(dog => {
+            { errors ? <Error_404/> :
+            dogs.length ? dogs.map(dog => {
                 return (
                     <Card
                     key={dog.id}
@@ -16,7 +21,7 @@ export const Cards = ({ dogs }) => {
                     temperaments={dog.temperaments}/>
                 )
             }) : 
-            <h1>Loading...</h1>
+            <Loading/>
             }
         </div>
     )

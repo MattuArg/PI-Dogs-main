@@ -1,0 +1,15 @@
+.div_filter {
+    font-family: monospace;
+    background-color: #007e74d4;
+    font-size: 16px;
+    border-radius: 23px;
+    margin: 7px;
+    padding: 12px;
+}
+.option {
+    color: #797775;
+}
+
+.div_filter h3 {
+    font-weight: 600;
+}

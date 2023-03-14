@@ -1,0 +1,35 @@
+.img {
+    width: 33px;
+    height: 33px;
+    margin: 0px 7px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255, 209, 209, 0.39);
+    padding: 7px;
+}
+  
+
+.link {
+    display: flex;
+    align-items: center;
+    border: solid 2px rgb(255, 167, 167);
+    background-color: azure;
+    border-radius: 25px;
+}
+
+.black {
+    color: black;
+    margin: 13px 9px 13px 0px;
+    font-weight: 600;
+    font-size: 22px;
+}
+  
+.red {
+    color: hsl(0deg 100% 38%);
+    margin: 13px 9px 13px 0px;
+    font-weight: 600;
+    font-size: 22px;
+}

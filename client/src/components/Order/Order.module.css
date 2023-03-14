@@ -1,0 +1,15 @@
+.div_order {
+    font-family: monospace;
+    background-color: #007e74d4;
+    font-size: 16px;
+    border-radius: 23px;
+    margin: 7px;
+    padding: 12px;
+}
+.option {
+    color: #797775;
+}
+
+.div_order h3 {
+    font-weight: 600;
+}
