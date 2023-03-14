@@ -52,8 +52,21 @@ let getDogsDb = async () => {
 }
 
 let getDogs_Api_Db = async () => {
-    let dogsApi = await getDogsDb()
-    let dogsDb = await getDogsApi()
+    let dogsApi = await getDogsApi()
+    let dogsDb = await getDogsDb()
+
+    dogsDb = dogsDb.map(dog => {
+        return ({
+            id: dog.id,
+            name: dog.name,
+            image: dog.image,
+            height: dog.height,
+            weight: dog.weight,
+            life_span: dog.life_span,
+            temperaments: dog.temperaments.map(temp => temp.name).join(", "),
+            origin: "DB"
+        })
+    })
 
     return [...dogsApi, ...dogsDb]
 }
