@@ -8,15 +8,48 @@
     border: red solid 1.5px;
     background-color: rgb(255 165 56);
     width: 15em;
-    margin: 0px 10px 20px 0px;
+    margin: 0px 10px 40px 0px;
+    padding: 10px 24px 10px 24px;
+    
+    box-shadow: 10px 10px 10px 1px;
 }
 
 .img {
-    width: 10em;
+    width:inherit;
+    margin: 14px 0px 14px 0px;
 }
 
-.card h2 {
+.name {
     border: red solid 1px;
     border-radius: 10px;
-    color: black;
+    color: #221d1d;
+    font-weight: 600;
+    margin: 0px;
+    padding: 5px;
+}
+
+.cont_weight {
+    border: red solid 1px;
+    border-radius: 10px;
+    color: #221d1d;
+    font-weight: 600;
+    margin: 0px;
+    padding: 5px;
+}
+
+.cont_temp{
+    border: red solid 1px;
+    border-radius: 10px;
+    color: #221d1d;
+    font-weight: 600;
+    margin: 0px;
+    padding: 5px;
+}
+
+.weight {
+    margin: 14px 0px 14px 0px;
+}
+
+.temp {
+    margin: 14px 0px 0px 0px;
 }
