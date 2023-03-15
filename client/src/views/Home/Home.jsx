@@ -13,8 +13,9 @@ import { Refresh_Dogs } from "../../components/Refresh/Refresh_Dogs";
 import { getDogs, getTemperaments } from "../../redux/actions";
 
 import { Back_Forth } from "../../assets/Link/Back_Forth/Back_Forth";
+import { Error_Red } from "../../components/Error/Error_Red/Error_Red";
+import { Error_Teal } from "../../components/Error/Error_Teal/Error_Teal";
 import s from "./Home.module.css"
-import { Error_404 } from "../../components/Error/Error_404";
 
 export const Home = () => {
 
@@ -39,34 +40,50 @@ export const Home = () => {
     return(
         <div className={s.container}>
 
-            <Back_Forth/>
 
-            <SearchBar/>
+            {
+                errors.getDogs ? 
+                <Error_Red/> :
 
-            <div className={s.filter_order}>
-                <Order_Weight setCurrentPage={setCurrentPage}/>
-                <Order_Alphabetically setCurrentPage={setCurrentPage}/>
-                <Filter_Temperaments setCurrentPage={setCurrentPage}/>
-                <Filter_Api_Db setCurrentPage={setCurrentPage}/>
-            </div>
+                errors.getDogName ?
+                <div>
+                    <Refresh_Dogs setCurrentPage={setCurrentPage}/>
+                    <Error_Teal/>
+                </div> :
+                
+                <div>
 
-            <Refresh_Dogs setCurrentPage={setCurrentPage}/>
+                    <Back_Forth/>
+                    <SearchBar/>
 
-            <Pagination
-                dogs={dogs.length}
-                dogsPerPage={dogsPerPage}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-            />
+                    <div className={s.filter_order}>
+                        <Filter_Api_Db setCurrentPage={setCurrentPage}/>
+                        <Order_Alphabetically setCurrentPage={setCurrentPage}/>
+                        <Order_Weight setCurrentPage={setCurrentPage}/>
+                        <Filter_Temperaments setCurrentPage={setCurrentPage}/>
+                    </div>
+
+                    <Refresh_Dogs setCurrentPage={setCurrentPage}/>
+
+                    <Pagination
+                        dogs={dogs.length}
+                        dogsPerPage={dogsPerPage}
+                        currentPage={currentPage}
+                        setCurrentPage={setCurrentPage}
+                    />
+                    
+                    <Cards dogs={current_Dogs}/>
             
-            <Cards dogs={current_Dogs} errors={errors}/>
-            
-            <Pagination
-                dogs={dogs.length}
-                dogsPerPage={dogsPerPage}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-            />
+                    <Pagination
+                        dogs={dogs.length}
+                        dogsPerPage={dogsPerPage}
+                        currentPage={currentPage}
+                        setCurrentPage={setCurrentPage}
+                    />
+
+                </div>
+            }
+
         </div>
     )
 }

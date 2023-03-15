@@ -3,13 +3,12 @@ import { Card } from "../Card/Card";
 
 import { Loading } from "../Loading/Loading";
 
-import { Error_404 } from "../Error/Error_404";
 import s from "./Cards.module.css"
 
-export const Cards = ({ dogs, errors }) => {
+export const Cards = ({ dogs }) => {
     return(
         <div className={s.cards}>
-            { errors ? <Error_404/> :
+            { 
             dogs.length ? dogs.map(dog => {
                 return (
                     <Card

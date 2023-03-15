@@ -10,7 +10,10 @@ ORDER_ALPHABETICALLY="ORDER_ALPHABETICALLY",
 ORDER_WEIGHT="ORDER_WEIGHT",
 REFRESH_DOGS="REFRESH_DOGS",
 EMPTY_ARRAY="EMPTY_ARRAY",
-ERROR= "ERROR"
+ERROR= "ERROR",
+ERROR_GET_DOGS="ERROR_GET_DOGS",
+ERROR_GET_DOG_NAME="ERROR_GET_DOG_NAME",
+ERROR_GET_DETAILS="ERROR_GET_DETAILS"
 
 export let getDogs = () => {
     return async dispatch => {
@@ -26,7 +29,7 @@ export let getDogs = () => {
             console.log(error);
 
             return dispatch({
-                type: ERROR,
+                type: ERROR_GET_DOGS,
                 payload: error.message
             })
         }
@@ -48,7 +51,7 @@ export let getDogDetails = (id) => {
             console.log(error);
         
             return dispatch({
-                type: ERROR,
+                type: ERROR_GET_DETAILS,
                 payload: error.message
             })
         }
@@ -68,15 +71,15 @@ export let getDogName = (name) => {
 
         } catch (error) {
             console.log(error);
-            return dispatch({
-                type: GET_DOG_NAME,
-                payload: []
-            })
-
             // return dispatch({
-            //     type: ERROR,
-            //     payload: error.message
+            //     type: GET_DOG_NAME,
+            //     payload: []
             // })
+
+            return dispatch({
+                type: ERROR_GET_DOG_NAME,
+                payload: error.message
+            })
         }
     }
 }

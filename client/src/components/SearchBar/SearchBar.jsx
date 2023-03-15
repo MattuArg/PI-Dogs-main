@@ -20,7 +20,7 @@ export const SearchBar = () => {
 
     let handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(empty_Array("For_DogName"))
+        dispatch(empty_Array("For_DogName"))//Para que aparezca el Loading
         dispatch(getDogName(searchDog))
         setSearchDog("")
     }

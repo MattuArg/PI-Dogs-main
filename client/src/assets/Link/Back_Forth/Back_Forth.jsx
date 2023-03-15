@@ -11,7 +11,7 @@ export let Back_Forth = () => {
         <div className={s.links}>
             <Link className={s.link} to="/">
                 <img className={s.img} src={img_black} alt={img_black} />
-                <h2 className={s.black}>Back to home</h2>
+                <h2 className={s.black}>Back</h2>
             </Link>
 
             <Link className={s.link} to="/createDog">

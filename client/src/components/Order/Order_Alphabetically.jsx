@@ -16,7 +16,7 @@ export let Order_Alphabetically = ({ setCurrentPage }) => {
 
     return (
         <div className={s.div_order}>
-            <h3>Filter Alphabetically:</h3>
+            <h3>Order Alphabetically:</h3>
 
             <select value="" onChange={handleChange}>
                 <option className={s.option}>Select</option>

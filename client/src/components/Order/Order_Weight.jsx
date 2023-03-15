@@ -16,7 +16,7 @@ export let Order_Weight = ({ setCurrentPage }) => {
 
     return (
         <div className={s.div_order}>
-            <h3>Filter by Weight:</h3>
+            <h3>Order by Weight:</h3>
 
             <select value="" onChange={handleChange}>
                 <option className={s.option}>Select</option>
